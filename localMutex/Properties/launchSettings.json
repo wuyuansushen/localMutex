@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "localMutex": {
+      "commandName": "Project"
+    }
+  }
+}
