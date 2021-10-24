@@ -8,10 +8,11 @@ namespace sysMutex
         static void Main(string[] args)
         {
             /*
-             * var mutexLocal = new Mutex(true,"Local/namedSysMutex");
+             * var mutexLocal = new Mutex(true,"Local\namedSysMutex");
              * mutexLocal.ReleaseMutex();
              */
-            var mutexName = "Local/namedSysMutex";
+            //Console.WriteLine("Test Global mutexes");
+            var mutexName = "Global\namedSysMutex";
             var mutex = Mutex.OpenExisting(mutexName);
             mutex.WaitOne();
             Console.WriteLine($"Get the mutex");

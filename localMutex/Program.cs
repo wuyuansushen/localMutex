@@ -5,7 +5,7 @@ namespace localMutex
 {
     class Program
     {
-        private static Mutex mutex = new Mutex(false,"Local/namedSysMutex");
+        private static Mutex mutex = new Mutex(false,"Global\namedSysMutex");
         private const int numIterations = 1;
         private const int numThreads = 3;
         static void Main(string[] args)
@@ -15,6 +15,7 @@ namespace localMutex
                 var newThread = new Thread(ThreadProc);
                 newThread.Start();
             }
+            Console.WriteLine($"Use Global Session Mutex.");
             Console.WriteLine($"Main thread-{Thread.CurrentThread.ManagedThreadId} has started all addtional threads, closing...");
         }
 
